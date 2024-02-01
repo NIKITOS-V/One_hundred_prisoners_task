@@ -1,9 +1,10 @@
-NumberExperiments = 100
-ExperimentMode = 1
+Number_Experiments = 100
+Experiment_Mode = 1
 
-NumberPrisoners = 100
-NumberTry = 50
+Number_Prisoners = 100
+Number_Try = 50
 
-CmdMode = 0
-TextFileMode = 0
-ReportMode = 0
+Print_In_Cmd = 0
+Create_Text_File = 0
+Report_In_Cmd = 0
+Report_In_Text_File = 0

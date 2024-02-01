@@ -1,54 +1,21 @@
-from random import shuffle
 from Git.One_hundred_prisoners_task.Experimet_Parameters import *
-
-
-class Room:
-    def __init__(self, RandomNumbers):
-        self.RandomNumbers = RandomNumbers
-        self.Field = {}
-
-    def GeneraneField(self):
-        shuffle(self.RandomNumbers)
-        self.Field = {box+1: number for box, number in enumerate(self.RandomNumbers)}
-
-
-class Prisoner:
-    def __init__(self, RandomNumbers, NumberTry):
-        self.RandomNumbers = RandomNumbers
-        self.NumberTry = NumberTry
-
-    def RandomChoise(self, Field, PrisonNumber):
-        shuffle(self.RandomNumbers)
-        for Box in self.RandomNumbers[0: self.NumberTry]:
-            if Field[Box] == PrisonNumber:
-                return 1
-        return 0
-
-    def NormalChoise(self, Field, PrisonNumber):
-        LastNumber = PrisonNumber
-        print(f'\nНомер заключённого: {PrisonNumber}')
-        for Try in range(self.NumberTry-1):
-            print(f"    номер коробки: {LastNumber}, Номер на листе: {Field[LastNumber]}")
-            if PrisonNumber == Field[LastNumber]:
-                print(f'    номер найден')
-                return 1
-            LastNumber = Field[LastNumber]
-        print(f'    номер не найден')
-        return 0
+from Room import Room
+from Prisoner import Prisoner
 
 
 class Experiment:
 
-    RandomNumbers = [number for number in range(1, NumberPrisoners+1)]
+    RandomNumbers = [number for number in range(1, Number_Prisoners+1)]
 
     def __init__(self):
-        self.NumberExperiments = NumberExperiments
-        self.ExperimentMode = ExperimentMode
-        self.NumberPrisoners = NumberPrisoners
-        self.NumberTry = NumberTry
-        self.CmdMode = CmdMode
-        self.TextFileMode = TextFileMode
-        self.ReportMode = ReportMode
+        self.NumberExperiments = Number_Experiments
+        self.ExperimentMode = Experiment_Mode
+        self.NumberPrisoners = Number_Prisoners
+        self.NumberTry = Number_Try
+        self.PrintInCmd = Print_In_Cmd
+        self.CrateTextFile = Create_Text_File
+        self.ReportInCmd = Report_In_Cmd
+        self.ReportInTextFile = Report_In_Text_File
 
         self.GoodResults = 0
 
@@ -88,4 +55,3 @@ class Experiment:
 
 
 Exp = Experiment()
-
