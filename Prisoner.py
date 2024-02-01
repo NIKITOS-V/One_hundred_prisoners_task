@@ -6,14 +6,14 @@ class Prisoner:
         self.RandomNumbers = RandomNumbers
         self.NumberTry = NumberTry
 
-    def RandomChoise(self, Field, PrisonNumber):
+    def Choise_0(self, Field, PrisonNumber):
         shuffle(self.RandomNumbers)
         for Box in self.RandomNumbers[0: self.NumberTry]:
             if Field[Box] == PrisonNumber:
                 return 1
         return 0
 
-    def NormalChoise(self, Field, PrisonNumber):
+    def Choise_1(self, Field, PrisonNumber):
         LastNumber = PrisonNumber
         print(f'\nНомер заключённого: {PrisonNumber}')
         for Try in range(self.NumberTry-1):
