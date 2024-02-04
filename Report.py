@@ -24,10 +24,10 @@ class Report:
 
     def SaveExperimentResult(self, Result):
         if Result:
-            self.Report += f'{self.NL}Эксперимент завершён удачно'
+            self.Report += f'{self.NL}Эксперимент завершён удачно{self.NL*2}'
 
         else:
-            self.Report += f'{self.NL}Эксперимент завершён неудачно'
+            self.Report += f'{self.NL}Эксперимент завершён неудачно{self.NL*2}'
 
     def SaveSimulationResult(self, GoodResult):
         SimulationResult = (f'Номер тактики: {Tactic_Number}'
