@@ -12,12 +12,9 @@ class CheckInput:
             int(Tactic_Number)
             int(Number_Prisoners)
             int(Number_Try)
-            int(Print_In_Cmd)
-            int(Create_Text_File)
-            int(Full_Report_In_Cmd)
-            int(Full_Report_In_Text_File)
         except ValueError:
-            self.RaiseGenerate('Все значения должны быть целочисленными')
+            self.RaiseGenerate('Переменные Number_Experiments, Tactic_Number, Number_Prisoners, Number_Try'
+                               'должны иметь целочисленные значения')
 
     def CheckValue(self):
         if type(Print_In_Cmd) != type(True):
