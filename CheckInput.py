@@ -9,7 +9,7 @@ class CheckInput:
     def CheckType(self):
         try:
             int(Number_Experiments)
-            int(Experiment_Mode)
+            int(Tactic_Number)
             int(Number_Prisoners)
             int(Number_Try)
             int(Print_In_Cmd)
@@ -22,7 +22,7 @@ class CheckInput:
     def CheckValue(self):
         if type(Print_In_Cmd) != type(True):
             self.RaiseGenerate('Переменная Print_In_Cmd должна иметь логический тип данных')
-        if Experiment_Mode not in [0, 1]:
+        if Tactic_Number not in [0, 1]:
             self.RaiseGenerate('Переменная Experiment_Mode может принимать только значения: 0, 1')
         if type(Create_Text_File) != type(True):
             self.RaiseGenerate('Переменная Create_Text_File должна иметь логический тип данных')
