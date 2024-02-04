@@ -6,7 +6,6 @@ class Room:
         self.RandomNumbers = RandomNumbers
         self.Field = {}
 
-    def GeneraneField(self):
+    def GenerateField(self):
         shuffle(self.RandomNumbers)
         self.Field = {box+1: number for box, number in enumerate(self.RandomNumbers)}
-
