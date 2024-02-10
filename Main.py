@@ -43,7 +43,6 @@ class Experiment:
 
             if not PrisonerResult[0]:
                 self.Report.SaveExperimentResult(0)
-
                 return
 
         self.GoodResults += 1
