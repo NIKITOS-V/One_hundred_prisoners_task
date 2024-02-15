@@ -34,7 +34,7 @@ class Report:
                             f'{self.NL*2}Кол-во экспериментов: {Number_Experiments}'
                             f'{self.NL*2}Удачных исходов: {GoodResult}'
                             f'{self.NL*2}Неудачных исходов: {Number_Experiments - GoodResult}'
-                            f'{self.NL*2}Шанс На успех: {GoodResult/Number_Experiments * 100} %')
+                            f'{self.NL*2}Шанс на успех: {GoodResult/Number_Experiments * 100} %')
 
         if Full_Report_In_Cmd:
             self.ReportForCmd = (f'{self.Report}{self.NL}'
