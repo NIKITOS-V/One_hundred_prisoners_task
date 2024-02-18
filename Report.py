@@ -55,7 +55,12 @@ class Report:
 
         if Create_Text_File:
             NowTime = datetime.now()
-            FileName = f'{NowTime.year}-{NowTime.month}-{NowTime.day}_{NowTime.hour}-{NowTime.minute}-{NowTime.second}'
+            FileName = (f'{NowTime.year}.'
+                        f'{"0" if NowTime.month < 10 else ""}{NowTime.month}.'
+                        f'{"0" if NowTime.day < 10 else ""}{NowTime.day}-'
+                        f'{"0" if NowTime.hour < 10 else ""}{NowTime.hour}.'
+                        f'{"0" if NowTime.minute < 10 else ""}{NowTime.minute}.'
+                        f'{"0" if NowTime.second < 10 else ""}{NowTime.second}')
 
             with open(f'Results\\{FileName}.txt', 'w', encoding='UTF-8') as File:
                 File.write(self.ReportForTextFile)
