@@ -4,10 +4,10 @@ from numpy.random import shuffle
 class Prisoner:
     WT = ' '
 
-    def __init__(self, RandomNumbers, NumberTry, ExperimentMode, DoFullReport):
+    def __init__(self, RandomNumbers, NumberTry, TacticNumber, DoFullReport):
         self.RandomNumbers = RandomNumbers
         self.NumberTry = NumberTry
-        self.ExperimentMode = ExperimentMode
+        self.TacticNumber = TacticNumber
         self.DoFullReport = DoFullReport
 
         self.EnteringTheRoom = self.TacticsType()
@@ -18,7 +18,7 @@ class Prisoner:
     def TacticsType(self):
         def Tactic_0(Field, PrisonerNumber):
             shuffle(self.RandomNumbers)
-            for Box in self.RandomNumbers[0: self.NumberTry]:
+            for Box in self.RandomNumbers[:self.NumberTry]:
                 if Field[Box] == PrisonerNumber:
                     return 1
             return 0
@@ -27,7 +27,7 @@ class Prisoner:
             shuffle(self.RandomNumbers)
             PrisonerReport = f'{PrisonerNumber}'
 
-            for Box in self.RandomNumbers[0: self.NumberTry]:
+            for Box in self.RandomNumbers[:self.NumberTry]:
                 NumberIntoBox = Field[Box]
                 PrisonerReport += f'{self.WT}{Box}:{NumberIntoBox}'
 
@@ -53,7 +53,7 @@ class Prisoner:
         def Tactic_1(Field, PrisonerNumber):
             LastBoxNumber = PrisonerNumber
 
-            for Try in range(self.NumberTry - 1):
+            for Try in range(self.NumberTry):
                 if PrisonerNumber == Field[LastBoxNumber]:
                     return 1
 
@@ -68,4 +68,4 @@ class Prisoner:
             (0, True): Tactic_0_Report
         }
 
-        return TacticsTypesDict[(self.ExperimentMode, self.DoFullReport)]
+        return TacticsTypesDict[(self.TacticNumber, self.DoFullReport)]
